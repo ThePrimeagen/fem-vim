@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+if [[ ! -d ~/.config/nvim/_hide ]]; then
+    echo "_hide does not exist"
+    exit 1
+fi
+
+mv ~/.config/nvim/_hide/* ~/.config/nvim
+mv ~/.vim/_hide/* ~/.vim
+
+rm -rf ~/.config/nvim/_hide/
+rm -rf ~/.vim/_hide
+
+

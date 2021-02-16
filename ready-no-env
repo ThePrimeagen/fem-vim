@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+if [[ -d ~/.config/nvim/_hide ]]; then
+    echo "_hide exists.  Please ready env before doing this again."
+    exit 1
+fi
+
+mkdir -p ~/.config/nvim/_hide
+mkdir -p ~/.vim/_hide
+
+mv ~/.config/nvim/* ~/.config/nvim/_hide
+mv ~/.vim/* ~/.vim/_hide
+
+if [[ $# -eq 1 ]]; then
+    cat stage.$1.vim > ~/.config/nvim/init.vim
+fi
+
